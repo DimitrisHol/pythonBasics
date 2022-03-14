@@ -184,8 +184,21 @@ E.g. for X = 3 and Y = 5, range(3,5) = (0,1,2,3,4)
 - `range(X,Y,Z)` Returns a list of numbers starting from **X**, up to but not including **Y**, with a step of **Z**:
 E.g. for X = 0, Y = 10, Z = 2 :  range(1,10,2) = (1,3,5,7,9)
 
+When we **do** know how many times we're gonna loop, we can use `for.`
 
+```python
+for i in range(5) : 
+    print(i)
+```
+This will result in : 
 
+```
+0
+1
+2
+3
+4
+```
 
 
 
