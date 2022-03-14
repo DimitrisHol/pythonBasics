@@ -154,6 +154,4 @@ for nestedList in myList :
             print(character)
 ```
 
-
-## Sorting 
-## Sorting grades and names , lets try to practice a lot on indexes. 
+Sorting on two different lists / same index for different lists ? 
