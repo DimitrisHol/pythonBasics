@@ -105,22 +105,18 @@ x = "Hello World"
 print (x[6:]) # World
 ```
 
-
-## Check quadratic : 
+Let's see an example where we can use the list indexing to parse a quadratic equation and calculate the solutions
 
 ```python
 import math
 
 quadratic = "x^2+5x+4"
 
-a = 1
-b = int(quadratic[4])
-c = int(quadratic[7])
-
-# print(b , c, type(b) , type(c))
+a = 1   # Simplify this, always 1
+b = int(quadratic[4])   # We are targeting '5'
+c = int(quadratic[7])   # We are targeting '4'
 
 D = b**2 - (4 * a * c)
-
 # print("D = ", D)
 
 x1 = ((-1 *b) + math.sqrt(D)) / 2 * a
