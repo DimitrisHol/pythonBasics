@@ -1,4 +1,4 @@
-What is the output of the followign operations? 
+What is the output of the followin operations? 
 
 ## Operations
 
