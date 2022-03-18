@@ -221,12 +221,14 @@ if countOfNumbers > 0 :
     average = sumOfNumbers / countOfNumbers
     
     countHigherThanAverage = 0
+
+    # We can now iterate again through the list
+    # to calculate what we need 
     for i in range(len(numbers)) : 
         if numbers[i] > average  : 
             countHigherThanAverage += 1
     print(average, countHigherThanAverage)
 ```
-
 
 ## Using files as inputs : 
 
@@ -237,7 +239,7 @@ Example : Let's assume we have a simple text file that contains 10 numbers seper
 ```
 6,4,2,3,7,11,1,2,4,5
 ```
-The only thing required to determine which file python should open, is the filename. (Careful to have the file inside the same directory as the python script.) For this example the naem of our file would be `test.csv`.
+The only thing required to determine which file python should open, is the filename. (Careful to have the file inside the same directory as the python script.) For this example the name of our file would be `test.csv`.
 
 
 ```python
@@ -280,7 +282,7 @@ data = contents.split(",")
 numbers = []
 for i in range(len(data)) : 
     numbers.append(int(data[i]))
-print(numbers)
+print(numbers) # [6, 4, 2, 3, 7, 11, 1, 2, 4, 5]
 ```
 And now this list is ready to be used however we want. 
 
@@ -294,6 +296,12 @@ someList = [1,2,3,4]
 
 for i in range(len(someList)) :
     print(someList[i])
+```
+```
+1
+2
+3
+4
 ```
 
 There is an alternative way to loop through a list, without the use of an iterator. Instead we are simply looping over each **element** of the list.
