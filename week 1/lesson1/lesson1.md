@@ -325,3 +325,67 @@ for nestedList in myList :
             # This will loop through the characters of each item of the nested list
             print(character)
 ```
+
+## Files vol 2 : 
+
+In the last example, the file contents were in a single line, seperated by commas.
+
+```
+6,4,2,3,7,11,1,2,4,5
+```
+Let's see an example where each number is on a different line : 
+```
+6
+4
+2
+3
+7
+11
+1
+2
+4
+5
+```
+The basic logic behind parsing the file into a data structure is very similar, the differences are in how we loop through each line. Let's start by opening and reading the file contents :
+
+```python
+with open("test.csv") as file : 
+    # This time we are gonna be directly looping through each line
+    # instead of loading the whole file into a variable. 
+    for line in file : 
+        print(line)
+```
+This time instead of having a single variable that holds the entirety of the file as a string, we're now looping through each line of the file, and storing it to the `line` variable. The line variable is still a string, just now it only contains one line of the file.
+
+Notice that when we print each line, we get a double new line each time. To fix this, we can strip the non-characters from each line with the `rstrip()` method. 
+
+
+```python
+with open("test.csv") as file : 
+    for line in file : 
+        # Use rstrip() to remove the new line at the end of each number
+        print(line.rstrip())
+```
+Next up, as before we want to store the data into a list : 
+```python
+data = []
+
+with open("test.csv") as file : 
+    for line in file : 
+        # Cast the number into an integer, and append it to our list
+        number = int(line.rstrip())
+        data.append(number)
+# Print the data outside of the loop, and optionally outside of the file opening transaction
+print(data)
+```
+We have successfuly parsed a file with each number stored vertically! 
+
+
+
+
+
+
+
+
+
+
