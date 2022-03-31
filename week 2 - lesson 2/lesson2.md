@@ -80,7 +80,6 @@ print(a) # {1 : "C", 2 : "B"}
 > Note : Although lists and dictionaries cannot be a key to a dictionary, they can be a value to a key. 
 
 ```python 
-
 someDictionary = {[1,2,3] : "A"} # This isn't allowed
 someDictionary = {{2 : "B"} : "A"} # This isn't allowed also
 someDictionary = {1 : [1,2,3]} # This is good ! 
@@ -100,3 +99,53 @@ print(dict1) # {1 : [1, 3, 5], 2 : [2, 4, 6]}
 ```
 > Be careful as same keys are overriden
 
+**2. Checking if a key is in the dictionary :** 
+
+```python 
+dict1 = {"Dimitris" : "123456789" , "Giorgos" : "789456123"}
+print("Dimitris" in dict1) # True
+print("123456789" in dict1) # False
+```
+The `in` keyword searches only through the keys, not the values.
+
+If we want to iterate through the dictionary keys or values, or both the ways to do are the following : 
+
+The keys of a dictionary can be returned by using `dictionary.keys()`
+The values of a dictionary can be returned by useing `dicdtionary.values()`
+
+And a data structure that contains all the key/value pairs can be returned by using `dictionary.items()`
+
+```python
+# By default iteration used the keys :
+dictionary = {1 : "A" , 2 : "B", 3 : "C"}
+for key in dictionary : 
+    print(key)
+# 1
+# 2
+# 3
+```
+**3. Iterating through the values of a dictionary :** 
+```python
+dictionary = {1 : "A" , 2 : "B", 3 : "C"}
+for value in dictionary.values() : 
+
+    print(value)
+# A
+# B
+# C
+```
+**4. A bit weird, but we can use two values before `in` to iterate using the pair of the key/value.**
+
+```python
+dictionary = {1 : "A" , 2 : "B", 3 : "C"}
+for (key, value) in dictionary.items() : 
+    print (key , value)
+# 1 A
+# 2 B
+# 3 C
+```
+
+
+## Sets : 
+
+This data structure is very similar to sets in maths. The 
