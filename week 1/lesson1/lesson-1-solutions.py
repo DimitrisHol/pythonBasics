@@ -1,92 +1,56 @@
-# Week 1, Lesson 1 
+# Week 1 , Lesson 1 Solutions :
+
+# 1. 
+colour = input("Please give me one of the primary colours (Red, Green Blue): ")
+while not (colour == "Blue" or colour == "Red" or colour == "Green") : 
+    colour = input("Please give me one of the primary colours : ")
+
+print("Congrats on giving me a primary colour.")
 
 
-# 4. Nested Lists
-# Create a 2D array, 100x25 (rowsxcolumns)
-# Fill the list with random integers (1,100) (min, max)
-# For each row calculate the max and min number
+## 2. Number Guessing : 
+numberToGuess = 3
+guessingNumber = int(input("Guess the number : "))
+while guessingNumber != numberToGuess : 
+    guessingNumber = int(input("Please try again : "))
+print("You found my number !")
 
-import random
+## 3. Number Guessing with available tries :
+availableTries = 3
 
-rows = 100
-columns = 25
+guessingNumber = 5
+userNumber = None
 
-wholeArray = []
-for i in range(rows) :
-    columnArray = []
-    for j in range(columns) : 
-        columnArray.append(random.randint(1, 100))
-    wholeArray.append(columnArray.copy())
-print(wholeArray)
+while userNumber != guessingNumber and availableTries > 0 : 
+    print("The available tries are : ", availableTries)
+    userNumber = int(input("Please give me your number "))
+    availableTries -= 1
 
-for i in range(len(wholeArray)) : 
-    currentRow = wholeArray[i]
-    print("For row :", i ,"(min/max) value (", min(currentRow), "/", max(currentRow), ")")
+if (availableTries >= 0) : 
+    print("You found the number")
+else : 
+    print("You're out of tries")
+
+## 4. Sum of integers up until number given 
+numberGiven = int(input("Please give me a positive integer : "))
+total = 0  
+for i in range(1, numberGiven + 1) : 
+    total += i
+
+print("Final Sum for " , numberGiven , "is : ", total)
 
 
-# 5.1 Single row files 
-# 6,4,2,3,7,11,1,2,4,5
+## 5. Sum of prime integers up until number given 
+def isPrime(number) : 
+    for i in range(2, int(number/2)) : 
+        if number % i == 0 : 
+            return False
+    return True
 
-with open("singleRow.csv") as file : 
-    contents = file.read()
-
-data = contents.split(",")
-
-maxValue = 0    
-maxPosition = None
-
-# Solution #1 : 
-
-for i in range(len(data) - 1) : 
-    intValue = int(data[i])
-
-    if intValue > maxValue : 
-        maxValue = intValue
-        maxPosition = i
-
-    # Check how the values are changing : 
-    # print(i, maxValue, maxPosition)
-
-print("The max value is :", maxValue, "at position", maxPosition)
-
-# Alternate solution : 
-
-# for number in data : 
-#     intValue = int(number)
-#     maxValue = max(intValue, maxValue)
-
-#     # Check the max value as it's changing
-#     print("Max Value : " , maxValue)
-
-# print(maxValue, data.index(str(maxValue)))
-
-# 5.2 File with multiple rows : 
-"""
-John,6
-George,4
-Lisa,2
-Tom,3
-Nick,7
-Bill,11
-Jean,1
-Chris,2
-Mary,4
-Kevin,5
-"""
-
-with open("multiRow.csv") as file : 
-
-    highestScore = 0
-    winner = None
-
-    for line in file : 
-        data = line.rstrip().split(",")
-
-        name = data[0]
-        currentScore = int(data[1])
-
-        if currentScore > highestScore : 
-            highestScore = currentScore
-            winner = name
-
-print(winner, highestScore)
+givenNumber = int(input("Please give me your number "))
+total = 0
+for number in range(1, givenNumber + 1) : 
+    if isPrime(number) : 
+        print("I am a prime number : ", number)
+        total += number
+print(total)

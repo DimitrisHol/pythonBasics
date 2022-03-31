@@ -1,92 +1,101 @@
-## List iteration : 
+What is the output of the following operations? 
 
-### 1. From the following list, print :
+## Operations
 
-```python
-x = [22,24,12,20,55,38,703,4,20]
-```
-1. The first three numbers
-2. The last three numbers
-3. Numbers starting from the 3rd, up to (also including) 6th
-4. Numbers starting from 5th to the end
-5. The 5th and 7th number
-6. The position of number 22
-7. How many times does number 20 appear
+1. print (5 + 3 * 2)
+2. print (5 + 3 * 2 ** 2)
 
-### 2. What is the output of the following operations : 
+3. print (8 / 3)
+4. print (8 % 3)
+5. print (8 // 5)
 
-```python
-x = [43,21,3 , [84,345,61], 75,89,96]
-```
+## Casting
 
-1. How do we get the number `345`
-2. How do we get the numbers `89` and `96`
-3. How do we get the number `84` and `345`
-4. 
-```python
-x = [2,4,5,8]
-x[2:4] = [10,12]
-print(x)
-```
+6. print(type(4.0))
+7. print(type(44))
+8. print(type("22"))
 
-### 3. What will each print statement output ? 
+9. print( int ("34"))
+10. print( int (34))
 
-```python
-x = ["a", "b"]
-x.append("c")
-print(x)
+11. print( float ("34"))
+12. print( float (34))
 
-x.append(["d", "e"])
-print(x)
+13. print( int (4.4))
+14. print( int ("4.4"))
 
-x.insert(2, "o")
-print(x)
+## Booleans
 
-x.extend(["f", "g"])
-print(x)
-```
+15. print(5 < 3)
+16. print(20 != 10)
+17. print("abc" > "bcd")
 
+18. print("5" < "3")
+19. print("5 < 3")
 
-### 4. Nested Lists : 
+## Boolean Algebra
 
-To pick a random number in python, you first import the library `random`
-and then you can use the method `random.randint(a,b)` which returns a random integer 
-from a to b.
+20. print(5 < 3 or 4 < 6)
+20. print(5 < 3 and 4 <= 6)
+21. print(5 == 5)
+22. print("apple" != "orange")
+
+22. print(not 5 < 3)
+23. print(not 5 < 3 and 10 > 4)
+
+## If statements 
+
+1. What is the output of the following program? 
 
 ```python
-import random 
+counter = 0
+x = 5 
+y = 10 
 
-for i in range(10) : 
-    print(random.randint(1,10))
+if x < y and x > 2 : 
+	print("Block 1")
+	counter = counter + 1
+
+elif x < y and x < 2 : 
+	print ("Block 2")
+	counter = counter + 1
+
+else : 
+	print("Block 3")
+	counter = counter + 1
+
+print(counter)
 ```
-For example, this will print 10 random numbers from 1 to 10.
 
-#### Goal : 
+2. What is the output of the following program ? 
 
-- Create a "2D" list with 100 rows, and 25 columns.
-- Fill the list with random integers from 1 to 100
-- For each row, calculate and print the maximum and the minimum number that was generated.
+```python
+x = 10
+y = 2 
 
+if x < y and x > 2 : 
+	print("Block 1")
+	counter = counter + 1
 
-### 5. Files : 
+elif x < y or y <= 2 : 
+	print ("Block 2")
+	counter = counter + 1
 
-1. Create a file called `test.csv` that contains the following numbers : 
-    ```
-    6,4,2,3,7,11,1,2,4,5
-    ```
-    Calculate and print the largest number, and the position of that number.
+else : 
+	print("Block 3")
+	counter = counter + 1
 
-2. Create a file called `test.csv` that contains the following data : 
-    ```
-    John,6
-    George,4
-    Lisa,2
-    Tom,3
-    Nick,7
-    Bill,11
-    Jean,1
-    Chris,2
-    Mary,4
-    Kevin,5
-    ```
-    Calculate and print the name and the score of the highest scoring person. 
+print(counter)
+```
+
+## Loops : 
+
+1. The primary colours are red, green and blue. Write a program that asks the user to pick one of those colours. The program should keep asking the user until they give one of the primary colors. 
+
+2. Make a guessing game. Pick a random number and have the user guess the number. The program should exit only if the user has found the correct number. 
+
+3. Expand on the previous program by giving the user only 3 tries, before he loses. 
+
+4. Write a program that will ask the user for a positive integer, and will return the sum of all the numbers leading to the selected number. For example user gives 5, then the result should be 1 + 2 + 3 + 4 + 5 = 15. 
+
+5. Modify the previous program so that it sums up only the prime numbers.
