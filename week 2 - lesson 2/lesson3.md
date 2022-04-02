@@ -148,4 +148,71 @@ for (key, value) in dictionary.items() :
 
 ## Sets : 
 
-This data structure is very similar to sets in maths. The 
+The final widely used data structure is **Sets**.
+
+Very similar to the sets seen in Maths, the purpose of sets is that each of their elements are unique, and can appear only once. 
+
+```python 
+x = {1 , 3, 2, 1, 1, 2, 1, 3}
+print (x) # set (2,1,3)
+```
+> Notice how there are no duplicate values. 
+
+Sets also are similar with dictionaries in two ways : 
+
+1. The elements in a set are not ordered.
+2. Just like dictionary keys, the elements of a set are immutable. In essence that means you cannot add a list or a dictionary as an element of a set. 
+
+```python
+x = {[1,2,3], [4,5,6]}
+# TypeError: unhashable type: 'list'
+```
+
+## Some basic functions for dictionaries : 
+
+One of the most common usages of a set is to check if some element exists in that set. That can be easily done by : 
+
+```python 
+x = {1,2,3}
+1 in x # True
+4 in x # False
+```
+
+The most basic methods, like insertion and deletion are supported
+
+```python
+
+x = {1,2}
+x.add(3) # x = {1,2,3}
+x.remove(2) # x = {1,3}
+```
+
+Let's create 3 different sets, containing the first 4 odd, even and prime numbers : 
+
+```python
+odds = {1, 3, 5 , 7}
+evens = {2, 4, 6, 8}
+primes = {2, 3, 5 , 7}
+```
+
+Sets have already defined methods to calculate common elements, different elements, or the sum of the elements, very similarly to maths. 
+
+```python
+odds.intersection(primes) # {3, 5, 7}
+odds.intersection(evens) # {}
+
+odds.difference(primes) # {1}
+odds.difference(evens) # {1, 3, 5, 7}
+
+odds.union(evens) # {1, 2, 3, 4, 5, 6, 7, 8}
+odds.union(primes) # {1, 2, 3, 5, 7}
+
+# You can also use boolean operators : 
+
+odds & primes # {3, 5, 7}
+primes - odds # {2}
+odds | evens # {1,2,3,4,5,6,7,8}
+```
+
+
+
